@@ -1,0 +1,50 @@
+{
+  "name": "dashbored",
+  "version": "1.0.0",
+  "description": "Dashbored is an all-in-one dashboard for users to keep notes, track the weather, get news updates, etc. Built with Express, Angular, Node, and SQLite.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron server.js",
+    "dev": "NODE_ENV=development electron server.js",
+    "bower": "./node_modules/bower/bin/bower"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beatface/dashbored.git"
+  },
+  "keywords": [],
+  "author": "“Emma <“emma.beaton@gmail.com”>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beatface/dashbored/issues"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es6": true,
+      "browser": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+      "res": true,
+      "next": true
+    },
+    "rules": {
+      "no-console": 0,
+      "comma-dangle": 0
+    }
+  },
+  "homepage": "https://github.com/beatface/dashbored#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "electron-prebuilt": "^0.36.10",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "node-sass-middleware": "^0.9.7"
+  },
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "nodemon": "^1.9.1"
+  }
+}
