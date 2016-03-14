@@ -3,6 +3,8 @@
 const electron = require('electron');
 const electronApp = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const client = require('electron-connect').client;
+const bodyParser = require('body-parser');
 
 const express = require('express');
 const path = require('path');
@@ -24,6 +26,9 @@ electronApp.on('window-all-closed', function() {
         electronApp.quit();
     }
 });
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 // view engine setup
@@ -40,30 +45,8 @@ electronApp.on('ready', function() {
         webPreferences: {
             nodeIntegration: false
         },
-        width: 840,
-        height: 600
-    });
-
-    // development error handler
-    // will print stacktrace
-    if (process.env.NODE_ENV === 'development') {
-        app.use(function(err, req, res) {
-            res.status(err.status || 500);
-            res.render('error', {
-                message: err.message,
-                error: err
-            });
-        });
-    }
-
-    // production error handler
-    // no stacktraces leaked to user
-    app.use(function(err, req, res) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: {}
-        });
+        width: 1000,
+        height: 800
     });
 
     app.listen(PORT, () => {
@@ -72,6 +55,8 @@ electronApp.on('ready', function() {
         // Open the DevTools.
         mainWindow.webContents.openDevTools();
     });
+
+    client.create(mainWindow);
 
     // closes server when window is closed
     mainWindow.on('closed', function() {

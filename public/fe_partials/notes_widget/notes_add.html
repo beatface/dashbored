@@ -1,0 +1,17 @@
+<div ng-controller="NotesCtrl">
+    <form method='POST', action='/notes'>
+        <div class="input-group">
+            <label for='title'> Title </label>
+            <input id="title" type='text', name='title'>
+            <br>
+        </div>
+        <div class="input-group">
+            <label for='content'> Note </label>
+            <input id="note" type='text' name='content'>
+            <br>
+        </div>
+        <div class="input-group">
+            <input class="btn" type='submit' value='Save'>
+        </div>
+    </form>
+</div>

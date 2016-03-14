@@ -28,7 +28,8 @@
     "extends": "eslint:recommended",
     "globals": {
       "res": true,
-      "next": true
+      "next": true,
+      "app": true
     },
     "rules": {
       "no-console": 0,
@@ -38,13 +39,15 @@
   "homepage": "https://github.com/beatface/dashbored#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "electron-connect": "^0.3.7",
     "electron-prebuilt": "^0.36.10",
     "express": "^4.13.4",
     "jade": "^1.11.0",
-    "node-sass-middleware": "^0.9.7"
+    "node-sass-middleware": "^0.9.7",
+    "sqlite3": "^3.1.1"
   },
   "devDependencies": {
     "bower": "^1.7.7",
-    "nodemon": "^1.9.1"
+    "gulp": "^3.9.1"
   }
 }
