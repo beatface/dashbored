@@ -9,10 +9,10 @@ gulp.task('serve', function () {
   electron.start();
 
   // Restart browser process
-  gulp.watch('server.js', 'controllers/*.js', 'models/*.js', electron.restart);
+  gulp.watch('server.js', 'controllers/*.js', 'models/*.js', 'routes/*.js', electron.restart);
 
   // Reload renderer process
-  gulp.watch(['./public/**/*.js', './public/app.js', './public/**/*.html'], electron.reload);
+  gulp.watch(['./public/*'], electron.reload);
 });
 
 gulp.task('default', ['serve']);
