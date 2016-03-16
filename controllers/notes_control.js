@@ -6,10 +6,6 @@ module.exports.index = (req, res) => {
     NoteModel.index(req, res);
 };
 
-// module.exports.newNote = (req, res) => {
-//     NoteModel.newNote(req, res);
-// };
-
 module.exports.postNote = (req, res) => {
     NoteModel.postNote(req, res);
 };

@@ -11,7 +11,6 @@ router.param('id', (req, res, next, id) => {
 });
 
 router.get('/api/notes', ctrl.index);
-// router.get('/notes/new', ctrl.newNote);
 router.post('/api/notes', ctrl.postNote);
 router.get('/api/notes/:id', ctrl.showNote);
 router.delete('/api/notes/:id', ctrl.destroy);

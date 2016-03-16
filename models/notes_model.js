@@ -17,8 +17,6 @@ module.exports.index = (req, res) => {
 };
 
 module.exports.postNote = (req, res) => {
-    // console.log("the req is", req);
-    console.log(req.body);
     // add the new note to the database
     let title = req.body.title;
     let note = req.body.content;
@@ -29,7 +27,7 @@ module.exports.postNote = (req, res) => {
 };
 
 module.exports.showNote = (req, res) => {
-    console.log("WHAT IS REQ.NOTE", req.params);
+    console.log("WHAT IS REQ PARAMS", req.params);
     db.all(`SELECT Notes.NoteId, Notes.Title, Notes.Content
             FROM Notes
             WHERE Notes.NoteId = ${req.note};`, (err, data) => {
