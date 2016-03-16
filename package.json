@@ -33,7 +33,12 @@
     },
     "rules": {
       "no-console": 0,
-      "comma-dangle": 0
+      "comma-dangle": 0,
+      "no-console": 1,
+      "no-unused-vars": 1,
+      "no-undef": 1,
+      "no-extra-semi": 1,
+      "no-empty": 1
     }
   },
   "homepage": "https://github.com/beatface/dashbored#readme",

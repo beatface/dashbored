@@ -12,6 +12,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('add', {
             templateUrl: "./notes_widget/partials/add.html",
             controller: "AddNotesCtrl"
+        })
+        .state('show-one', {
+            url: "/notes/:id",
+            templateUrl: "./notes_widget/partials/show_one.html",
+            controller: "ShowOneCtrl"
         });
     $urlRouterProvider.otherwise("/");
 });

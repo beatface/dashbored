@@ -6,7 +6,7 @@ const db = new sqlite3.Database('./db/dashbored.sqlite');
 
 
 module.exports.index = (req, res) => {
-    db.all(`SELECT Notes.title, Notes.content
+    db.all(`SELECT Notes.NoteId, Notes.Title, Notes.Content
             FROM Notes JOIN UserData
             ON Notes.userid = UserData.userid
             WHERE Notes.userid = UserData.userid;`, (err, data) => {
@@ -15,10 +15,6 @@ module.exports.index = (req, res) => {
                 res.send(data);
             });
 };
-
-// module.exports.newNote = (req, res) => {
-//
-// };
 
 module.exports.postNote = (req, res) => {
     // console.log("the req is", req);
@@ -32,18 +28,36 @@ module.exports.postNote = (req, res) => {
     });
 };
 
-// module.exports.showNote = (req, res) => {
-// // show a specific note
-// };
-//
-// module.exports.destroyNote = (req, res) => {
-// // remove specific note
-// };
-// 
-// module.exports.edit = (req, res) => {
-// // edit specific note
-// };
-//
-// module.exports.update = (req, res) => {
-// // update specific note
-// };
+module.exports.showNote = (req, res) => {
+    console.log("WHAT IS REQ.NOTE", req.params);
+    db.all(`SELECT Notes.NoteId, Notes.Title, Notes.Content
+            FROM Notes
+            WHERE Notes.NoteId = ${req.note};`, (err, data) => {
+                if (err) throw err;
+                console.log("ONE NOTE", data);
+                res.send(data);
+            });
+};
+
+module.exports.destroyNote = (req, res) => {
+    // remove specific note
+    db.run(`DELETE FROM Notes
+            WHERE Notes.NoteId = ${req.note}`, (err) => {
+                if (err) throw err;
+                res.redirect('/');
+            });
+};
+
+module.exports.edit = (req, res) => {
+    // edit specific note
+    db.run(`UPDATE Notes
+            SET Notes.Title = 'Texas', Notes.Content = ''
+            WHERE Notes.NoteId = ${req.note}`, (err) => {
+                if (err) throw err;
+                res.redirect('/');
+            });
+};
+
+module.exports.update = (req, res) => {
+    // update specific note
+};
