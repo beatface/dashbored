@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron server.js",
-    "dev": "NODE_ENV=development electron server.js",
+    "start": "node server.js",
+    "dev": "NODE_ENV=development nodemon server.js",
     "bower": "./node_modules/bower/bin/bower"
   },
   "repository": {
@@ -32,9 +32,8 @@
       "app": true
     },
     "rules": {
-      "no-console": 0,
-      "comma-dangle": 0,
       "no-console": 1,
+      "comma-dangle": 0,
       "no-unused-vars": 1,
       "no-undef": 1,
       "no-extra-semi": 1,
@@ -53,6 +52,7 @@
   },
   "devDependencies": {
     "bower": "^1.7.7",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "nodemon": "^1.9.1"
   }
 }
