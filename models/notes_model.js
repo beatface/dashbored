@@ -46,16 +46,14 @@ module.exports.destroyNote = (req, res) => {
             });
 };
 
-module.exports.edit = (req, res) => {
-    // edit specific note
+module.exports.update = (req, res) => {
+    let title = req.body.title;
+    let note = req.body.content;
+    // update specific note
     db.run(`UPDATE Notes
-            SET Notes.Title = 'Texas', Notes.Content = ''
+            SET Notes.Title = '${title}', Notes.Content = '${note}'
             WHERE Notes.NoteId = ${req.note}`, (err) => {
                 if (err) throw err;
                 res.redirect('/');
             });
-};
-
-module.exports.update = (req, res) => {
-    // update specific note
 };

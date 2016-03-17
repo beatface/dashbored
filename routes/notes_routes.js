@@ -10,11 +10,10 @@ router.param('id', (req, res, next, id) => {
     next();
 });
 
-router.get('/api/notes', ctrl.index);
-router.post('/api/notes', ctrl.postNote);
-router.get('/api/notes/:id', ctrl.showNote);
-router.delete('/api/notes/:id', ctrl.destroy);
-router.get('/api/notes/:id/edit', ctrl.edit);
-router.put('/api/notes/:id', ctrl.update);
+router.get('/notes', ctrl.index);
+router.post('/notes', ctrl.postNote);
+router.get('/notes/:id', ctrl.showNote);
+router.delete('/notes/:id', ctrl.destroy);
+router.put('/notes/:id', ctrl.update);
 
 module.exports = router;
