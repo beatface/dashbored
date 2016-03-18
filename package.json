@@ -43,6 +43,7 @@
   "homepage": "https://github.com/beatface/dashbored#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
     "electron-connect": "^0.3.7",
     "electron-prebuilt": "^0.36.10",
     "express": "^4.13.4",
