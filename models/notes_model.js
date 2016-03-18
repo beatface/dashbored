@@ -17,8 +17,6 @@ module.exports.index = (req, res) => {
 };
 
 module.exports.postNote = (req, res) => {
-    console.log(req.body);
-    // add the new note to the database
     let title = req.body.title;
     let note = req.body.content;
     db.run(`INSERT INTO Notes VALUES (NULL, "${title}", "${note}", 1)`, (err) => {
@@ -28,7 +26,6 @@ module.exports.postNote = (req, res) => {
 };
 
 module.exports.showNote = (req, res) => {
-    console.log("WHAT IS REQ PARAMS", req.params);
     db.all(`SELECT Notes.NoteId, Notes.Title, Notes.Content
             FROM Notes
             WHERE Notes.NoteId = ${req.note};`, (err, data) => {
@@ -39,7 +36,6 @@ module.exports.showNote = (req, res) => {
 };
 
 module.exports.destroyNote = (req, res) => {
-    // remove specific note
     db.run(`DELETE FROM Notes
             WHERE Notes.NoteId = ${req.note}`, (err) => {
                 if (err) throw err;
@@ -48,10 +44,9 @@ module.exports.destroyNote = (req, res) => {
 };
 
 module.exports.update = (req, res) => {
-    console.log(">>>>>>>>>>>>>>>>>>>>>>", req.body);
+    console.log(">>>>>>>>>>>>>", req.body);
     const title = req.body.title;
     const note = req.body.content;
-    // update specific note
     db.run(`UPDATE Notes
             SET Notes.Title = '${title}', Notes.Content = '${note}'
             WHERE Notes.NoteId = ${req.note}`, (err) => {
