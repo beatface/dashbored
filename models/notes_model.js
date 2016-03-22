@@ -39,18 +39,20 @@ module.exports.destroyNote = (req, res) => {
     db.run(`DELETE FROM Notes
             WHERE Notes.NoteId = ${req.note}`, (err) => {
                 if (err) throw err;
-                res.redirect('/');
+                res.send('success!');
             });
 };
 
 module.exports.update = (req, res) => {
     console.log(">>>>>>>>>>>>>", req.body);
+    console.log("<<<<", req.note);
+    const id = req.note;
     const title = req.body.title;
     const note = req.body.content;
     db.run(`UPDATE Notes
-            SET Notes.Title = '${title}', Notes.Content = '${note}'
-            WHERE Notes.NoteId = ${req.note}`, (err) => {
+            SET Title = "${title}", Content = "${note}"
+            WHERE NoteId = ${id}`, (err) => {
                 if (err) throw err;
-                res.redirect('/');
+                res.send('success!');
             });
 };
