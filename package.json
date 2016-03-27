@@ -49,7 +49,8 @@
     "express": "^4.13.4",
     "jade": "^1.11.0",
     "node-sass-middleware": "^0.9.7",
-    "sqlite3": "^3.1.1"
+    "sqlite3": "^3.1.1",
+    "twit": "^2.2.3"
   },
   "devDependencies": {
     "bower": "^1.7.7",
