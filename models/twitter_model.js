@@ -21,7 +21,6 @@ module.exports.index = (req, res) => {
 module.exports.loadSearch = (req, res) => {
     T.get('search/tweets', { q: req.twitSearch, count: 30 }, function(err, data, response) {
         if (err) throw err;
-        console.log(data);
         res.send(data);
     });
 };
