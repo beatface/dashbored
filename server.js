@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 3153;
 
 // Express routes, views, ctrls
 const routes = require('./routes/');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use(bodyParser.json());
 
