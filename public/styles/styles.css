@@ -1,0 +1,195 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', 'Helvetica', sans-serif;
+}
+
+#background {
+    height: 100vh;
+    background-image: url(../images/dashbored.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#about {
+    background: rgba(94, 158, 187, 0.9);
+    height: 650px;
+    text-align: center;
+    color: #eaf590;
+}
+h1 {
+    font-family: 'Lobster', 'Open Sans', 'Helvetica', sans-serif;
+    color: white;
+    font-size: 5em;
+    text-shadow: 1px 1px 2px rgba(70, 70, 70, 1);
+    margin-top: 0;
+    padding-top: 6%;
+}
+.code {
+    background-color: #d8e9ef;
+
+}
+
+
+h2 {
+    font-family: Lobster;
+    text-shadow: 1px 1px 2px rgba(70, 70, 70, 1);
+    color: white;
+    font-size: 2em;
+}
+
+h3 {
+    font-family: futura;
+    color: #eaf590;
+    letter-spacing: 2px;
+}
+
+#codeBlock {
+    background-color: #d8e9ef;
+    font-family: Source Code Pro;
+    border: 1px solid #fda0a9;
+    margin-left: 25%;
+    margin-right: 25%;
+    color: black;
+}
+/* Just to center things */
+.center {
+    position: absolute;
+    width: 1200px;
+    height: 650px;
+    top: 70px;
+    left: 100px;
+}
+
+/* The element to hover over */
+.qs {
+    cursor: default;
+    display: inline-block;
+    position: absolute;
+}
+#nts {
+    width: 493px;
+    height: 290px;
+    left: 297px;
+    top: 8px;
+}
+#notes {
+    left: 143px;
+}
+#twts {
+    width: 450px;
+    height: 437px;
+    right: 29px;
+    top: 238px;
+}
+#twits {
+    left: 120px;
+}
+#snk {
+    width: 269px;
+    height: 290px;
+    left: 40px;
+    top: 290px;
+}
+#snake {
+    left: 20px;
+}
+#clk {
+    width: 150px;
+    height: 150px;
+    left: 26px;
+    top: 42px;
+    border-radius: 50%;
+}
+#clock {
+    left: -35px;
+}
+#cal {
+    width: 290px;
+    height: 240px;
+    left: 330px;
+    top: 408px;
+}
+#calculator {
+    left: 30px;
+}
+.qs .popover {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 5px;
+  bottom: 42px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  padding: 7px 10px;
+  position: absolute;
+  width: 200px;
+  z-index: 4;
+}
+.qs .popover:before {
+  border-top: 7px solid rgba(0, 0, 0, 0.85);
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  bottom: -7px;
+  content: '';
+  display: block;
+  left: 50%;
+  margin-left: -7px;
+  position: absolute;
+}
+.qs:hover .popover {
+  display: block;
+  -webkit-animation: fade-in .3s linear 1, move-up .3s linear 1;
+  -moz-animation: fade-in .3s linear 1, move-up .3s linear 1;
+  -ms-animation: fade-in .3s linear 1, move-up .3s linear 1;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-ms-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+@-moz-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+@-ms-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}

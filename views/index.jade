@@ -1,0 +1,32 @@
+doctype html
+html(lang='en')
+    head
+        title Dashbored
+        link(rel='stylesheet' href='/styles/styles.css')
+        link(href='https://fonts.googleapis.com/css?family=Open+Sans|Lobster' rel='stylesheet' type='text/css')
+        link(href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css')
+    body
+        #background
+            .center
+                span#nts.qs
+                    span#notes.popover.above Notes! Using SQLite, users can create, update, edit, and delete notes.
+                span#twts.qs 
+                    span#twits.popover.above Search Twitter through the Twitter API.
+                span#snk.qs 
+                    span#snake.popover.above Who doesn't love a game of snake? Pure Javascript, still fun. 
+                span#clk.qs 
+                    span#clock.popover.above Don't be late! Javascript + CSS.
+                span#cal.qs 
+                    span#calculator.popover.above A little Javascript, a lotta CSS.
+        #about
+            div
+                h1 Dashbored
+                p Dashbored is an all-in-one dashboard for users to keep notes, play Snake, view tweets, and use a calculator.
+                p Built with Electron, Express, Angular, Node, and SQLite, all widgets are draggable, just like your built-in Mac dashboard.
+                
+                h2 Installation
+                h3 Electron bundled app download coming soon! In the meantime...
+                #codeBlock
+                    p.code git clone https://github.com/beatface/dashbored-client
+                    p.code npm install
+                    p.code npm start
